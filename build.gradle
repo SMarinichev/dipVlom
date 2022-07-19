@@ -1,23 +1,43 @@
 plugins {
     id 'java'
+    id "io.freefair.lombok" version "5.3.0"
+    id 'io.qameta.allure' version '2.9.6'
 }
 
 group 'ru.netology'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 11
-compileJava.options.encoding = 'UTF-8'
-compileTestJava.options.encoding = 'UTF-8'
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'io.rest-assured:rest-assured:4.3.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.1'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation 'org.projectlombok:lombok:1.18.24'
+    testImplementation 'com.codeborne:selenide:6.6.3'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.36'
+    testImplementation 'mysql:mysql-connector-java:8.0.29'
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
+    testImplementation 'org.postgresql:postgresql:42.3.6'
+    testImplementation 'io.qameta.allure:allure-selenide:2.18.1'
+    testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.36'
+
 }
 
 test {
     useJUnitPlatform()
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty "db.url", System.getProperty("db.url")
+    systemProperty "login", System.getProperty("login", "user")
+    systemProperty "password", System.getProperty("password", "pass")
+
+//    systemProperty "app.url", System.getProperty("app.url", "http://localhost:8080");
 }
