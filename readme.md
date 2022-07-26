@@ -1,9 +1,5 @@
-# DiplomQA
-[План тестирования](https://github.com/BednovaK/DiplomQA/blob/4ab522d10ea94f6c875c4925518a47c318f0e405/Plan.md)
-
-[Отчет по тестированию](https://github.com/BednovaK/DiplomQA/blob/c3f5e6a18bc276ce03506d76a40e82e952a018f6/docs/Report.md)
-
-[Отчет о выполнении плана тестирования](https://github.com/BednovaK/DiplomQA/blob/c3f5e6a18bc276ce03506d76a40e82e952a018f6/docs/Summary.md)
+# dipVlom
+[План тестирования](https://github.com/SMarinichev/dipVlom/blob/2d29d519ab657bcbd72e748375a0eccf80119b5d/documents/plan.md)
 
 ### Запуск приложения
 
@@ -11,7 +7,7 @@
 
 **Примечание**: Приложение запускалось через Docker на локальной машине.
 
-* склонировать репозиторий ```https://github.com/BednovaK/DiplomQA.git```
+* склонировать репозиторий ```https://github.com/SMarinichev/dipVlom.git```
 * запустить docker container ```docker-compose up```.
 *   Дождаться пока контейнеры запустятся
 * в терминале IntelliJ IDEA запустить SUT:
@@ -30,7 +26,3 @@
 ```./gradlew allureReport (первоначальная команда)```
 
 ```./gradlew allureServe (запуск и открытие отчетов)```
-
-* остановить SUT комбдинацией клавиш ```CTRL+C```
-
-* Завершить работу контейнеров ```docker-compose down```
