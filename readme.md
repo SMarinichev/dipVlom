@@ -8,7 +8,7 @@
 **Примечание**: Приложение запускалось через Docker на локальной машине.
 
 * склонировать репозиторий ```https://github.com/SMarinichev/dipVlom.git```
-* запустить docker container ```docker-compose up```.
+* запустить docker container ```docker-compose up -d --force-recreate```.
 *   Дождаться пока контейнеры запустятся
 * в терминале IntelliJ IDEA запустить SUT:
     - с использованием БД MySQL
@@ -22,7 +22,5 @@
       ```./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app" ```
 
 * запустить отчеты командой:
-
-```./gradlew allureReport (первоначальная команда)```
 
 ```./gradlew allureServe (запуск и открытие отчетов)```
